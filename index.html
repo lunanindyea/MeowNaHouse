@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MeowNaHouse — Adopsi Kucing</title>
+  <meta name="description" content="MeowNaHouse adalah website adopsi kucing dengan daftar, filter, detail, favorit, formulir adopsi, shelter, dan kontak.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav-wrap"><nav class="nav container">
+  <a class="brand" href="#home"><span class="brand-mark">♥</span><span>MeowNa<span>House</span></span></a>
+  <div class="nav-links"><a href="#cats" data-i18n="navCats">Daftar Kucing</a><a href="#about" data-i18n="navAbout">Tentang</a><a href="#shelter" data-i18n="navShelter">Shelter</a><a href="#contact" data-i18n="navContact">Kontak</a></div>
+  <div class="nav-actions"><label class="lang"><span>🌐</span><select id="language"><option value="id">ID</option><option value="en">EN</option></select></label><button class="icon-btn" id="favBtn" aria-label="Favorit">♡<b id="favCount">0</b></button><button class="menu-btn" id="menuBtn">☰</button></div>
+</nav></header>
+
+<main id="home">
+<section class="hero container">
+  <div class="hero-copy"><p class="eyebrow" data-i18n="heroEyebrow">FIND YOUR PURRFECT FRIEND</p><h1 data-i18n="heroTitle">Temukan teman kecil untuk <em>selamanya.</em></h1><p class="hero-text" data-i18n="heroText">Berikan rumah penuh kasih untuk kucing yang sedang menunggu keluarga barunya.</p><div class="hero-actions"><a class="btn primary" href="#cats" data-i18n="browseCats">Lihat Kucing</a><a class="btn ghost" href="#adopt" data-i18n="adoptNow">Ajukan Adopsi →</a></div><div class="hero-note">🐾 <span data-i18n="heroNote">Adopsi bertanggung jawab, bukan sekadar memiliki.</span></div></div>
+  <div class="hero-slider"><div class="slides" id="slides"></div><div class="slider-overlay"><span id="slideLabel">Kucing Kampung</span><span id="slideNumber">01 / 06</span></div><button class="slide-arrow prev" id="prevSlide">‹</button><button class="slide-arrow next" id="nextSlide">›</button><div class="dots" id="dots"></div></div>
+</section>
+
+<section class="trust container"><div><strong>150+</strong><span data-i18n="stat1">kucing menemukan rumah</span></div><div><strong>8</strong><span data-i18n="stat2">jenis kucing</span></div><div><strong>100%</strong><span data-i18n="stat3">proses adopsi terarah</span></div></section>
+
+<section class="section container" id="cats"><div class="section-head"><div><p class="eyebrow" data-i18n="catEyebrow">MEET THE CATS</p><h2 data-i18n="catTitle">Mereka sedang menunggu kamu.</h2></div><button class="text-btn" id="resetFilters" data-i18n="reset">Reset filter</button></div>
+<div class="filters"><div class="search"><span>⌕</span><input id="search" type="search" placeholder="Cari nama atau jenis kucing..." data-placeholder="searchPlaceholder"></div><select id="breed"><option value="" data-i18n="allBreeds">Semua jenis</option><option>Kampung</option><option>Persia</option><option>British Shorthair</option><option>Ragdoll</option><option>Scottish Fold</option><option>Sphynx</option><option>Munchkin</option><option>Anggora</option></select><select id="age"><option value="" data-i18n="allAges">Semua umur</option><option value="kitten" data-i18n="kitten">Anak (≤ 1 tahun)</option><option value="young" data-i18n="young">Muda (2–4 tahun)</option><option value="adult" data-i18n="adult">Dewasa (5+ tahun)</option></select></div>
+<div class="cat-grid" id="catGrid"></div><p class="empty" id="emptyState" hidden data-i18n="empty">Tidak ada kucing yang cocok dengan pencarianmu.</p></section>
+
+<section class="about section" id="about"><div class="container about-grid"><div><p class="eyebrow" data-i18n="aboutEyebrow">WHY MEOWNahOUSE</p><h2 data-i18n="aboutTitle">Rumah baru dimulai dari satu keputusan kecil.</h2></div><div><p data-i18n="aboutText">MeowNaHouse membantu mempertemukan calon adopter dengan kucing yang membutuhkan keluarga. Kami mengutamakan proses yang ramah, transparan, dan bertanggung jawab.</p><div class="pill-row"><span>✓ <span data-i18n="pill1">Profil kucing jelas</span></span><span>✓ <span data-i18n="pill2">Pendampingan adopsi</span></span><span>✓ <span data-i18n="pill3">Prioritas kesejahteraan</span></span></div></div></div></section>
+
+<section class="section container" id="adopt"><div class="adopt-card"><div><p class="eyebrow" data-i18n="adoptEyebrow">READY TO ADOPT?</p><h2 data-i18n="adoptTitle">Ceritakan sedikit tentang rumahmu.</h2><p data-i18n="adoptText">Isi formulir singkat ini. Tim shelter akan menghubungimu untuk tahap berikutnya.</p></div><form id="adoptForm"><input required name="name" placeholder="Nama lengkap" data-ph="name"><input required type="email" name="email" placeholder="Email" data-ph="email"><input required name="phone" placeholder="Nomor WhatsApp" data-ph="phone"><select required name="cat" id="adoptCat"><option value="" data-i18n="chooseCat">Pilih kucing</option></select><textarea required name="reason" rows="4" placeholder="Kenapa kamu ingin mengadopsi?" data-ph="reason"></textarea><button class="btn primary" type="submit" data-i18n="submitAdopt">Kirim Pengajuan</button><small id="formMsg"></small></form></div></section>
+
+<section class="section container" id="shelter"><div class="section-head"><div><p class="eyebrow" data-i18n="shelterEyebrow">COME SAY HI</p><h2 data-i18n="shelterTitle">Shelter MeowNaHouse</h2></div></div><div class="shelter-grid"><div class="map-card"><div class="map-pin">♥</div><div><strong>MeowNaHouse Shelter</strong><p>Palembang, Sumatera Selatan</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Palembang+Sumatera+Selatan" data-i18n="openMaps">Buka di Google Maps →</a></div></div><div class="contact-card" id="contact"><p class="eyebrow" data-i18n="contactEyebrow">CONTACT</p><h3 data-i18n="contactTitle">Punya pertanyaan?</h3><p data-i18n="contactText">Chat kami untuk info kucing, jadwal kunjungan, dan proses adopsi.</p><a class="btn dark" href="https://wa.me/6285814568534?text=Halo%20kak%20aku%20mau%20nanya%20tentang%20kucing%20ini.." target="_blank" rel="noopener">WhatsApp ↗</a></div></div></section>
+</main>
+
+<footer><div class="container footer"><span>© 2026 MeowNaHouse</span><span data-i18n="footer">Made with love for every little meow.</span></div></footer>
+
+<div class="modal" id="detailModal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<a class="wa-float" href="https://wa.me/6285814568534?text=Halo%20kak%20aku%20mau%20nanya%20tentang%20kucing%20ini.." target="_blank" rel="noopener" aria-label="Chat WhatsApp">☏<span>Chat</span></a>
+<script src="js/script.js"></script>
+</body></html>
